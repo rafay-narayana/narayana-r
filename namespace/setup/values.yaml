@@ -1,0 +1,60 @@
+## environment
+hostenv: console-narayana-testbed1.dev.rafay-edge.net
+opsenv: ops-console-narayana-testbed1.dev.rafay-edge.net
+
+## API key
+apikey: ra2.2a7583f328d181b6b23522a5fe29a3c7066e85e0.3716ad63dfa3e277f32e65ebba80435a353a95b7fc43ba0a63bfb5f7aa9778be
+
+##Project name
+projectname: narayanar
+
+##ArtifactDriver image name, default as 'rafay' image
+artifact_driver: registry.dev.rafay-edge.net/rafay/repodriver:v3.5.x-6 
+#registry.dev.rafay-edge.net/shaik/custom-opentofu-driver-mks:v1 
+
+##to enable debug
+debug: False
+
+##to share the resource templates
+sharing: True
+
+##Load all template or only templates specified under templates
+load_all_templates: False
+
+##Load templates to all orgs.
+load_all_orgs: False
+# Active and Approved orgs will be loaded
+
+##Load the org hash list comma separate to load more than one. if loadallorgs is true, this will be ignored.
+org_hash: 
+
+## version to tag the resources
+version: v3.5
+
+## list of templates
+
+repository:
+- ../repository/repository.yaml
+
+context:
+
+
+res-templates:
+- ../res-templates/res-eks-cluster/v1.0/res-eks-cluster.yaml
+- ../res-templates/res-eks-onboarding/v1.0/res-eks-onboarding.yaml
+- ../res-templates/res-gen-dnsconfig/v1.0/res-gen-dnsconfig.yaml
+
+
+templates:
+#- ../env-templates/system-eks/v1.0/system-eks.yaml
+#- ../env-templates/system-gcp-kubeflow/v1.0/system-gcp-kubeflow.yaml
+
+
+workflow-handlers:
+
+
+compute-profiles:
+
+service-profiles:
+
+

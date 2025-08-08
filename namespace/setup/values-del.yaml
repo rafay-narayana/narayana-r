@@ -1,0 +1,37 @@
+
+## environment
+hostenv: <>
+opsenv: <>
+
+## API key
+apikey: <>
+
+##Project name
+projectname: defaultproject
+
+##to enable debug
+debug: False
+
+
+##delete templates from all orgs.
+delete_from_all_orgs: True
+
+# list of orgsids from where template is to be deleted
+org_hash: 
+
+#folder to store the deleted
+folder_to_store:  deleted
+
+templates:
+
+
+res-templates:
+# - ../res-templates/res-gen-dnsconfig/v1.0/res-gen-dnsconfig.yaml 
+
+context:
+
+compute-profiles:
+
+service-profiles:
+ 
+workflow-handlers:

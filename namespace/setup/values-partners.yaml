@@ -1,0 +1,106 @@
+## environment
+hostenv: <partners_host_env>
+opsenv:  <partners_ops_env>
+
+## API key
+## prod partner admin key... 
+## can be ingnore from here, as this will be taken from environment
+## export PARTNER_API_KEY=<api_key>
+apikey: <api_key>
+
+##Project name
+projectname: default-catalog
+
+##ArtifactDriver image name, default as 'rafay' image
+artifact_driver: registry.rafay-edge.net/rafay/repodriver:r3.5.2-1
+
+##to enable debug
+debug: False
+
+##to share the resource templates
+sharing: True
+
+##Load all template or only templates specified under templates
+load_all_templates: False
+
+##Load templates to all orgs.
+load_all_orgs: True
+# Active and Approved orgs will be loaded
+
+##Load the org hash list comma separate to load more than one. if loadallorgs is true, this will be ignored.
+org_hash: pk0lv4k
+
+## version to tag the resources
+version: v3.5
+
+## list of templates
+
+repository:
+- ../repository/repository.yaml
+
+context:
+#- ../context/system-dns-config-selfhosted.yaml
+- ../context/system-dns-config.yaml
+
+res-templates:
+- ../res-templates/res-eks-cluster/v1.0/res-eks-cluster.yaml
+- ../res-templates/res-eks-onboarding/v1.0/res-eks-onboarding.yaml
+- ../res-templates/res-gen-dnsconfig/v1.0/res-gen-dnsconfig.yaml
+- ../res-templates/res-gen-inference-vllm/v1.0/res-gen-inference-vllm.yaml
+- ../res-templates/res-gen-kubeconfig-user/v1.0/res-gen-kubeconfig-user.yaml
+- ../res-templates/res-gen-kubeconfig/v1.0/res-gen-kubeconfig.yaml
+- ../res-templates/res-gen-kuberay-vanilla/v1.0/res-gen-kuberay-vanilla.yaml
+- ../res-templates/res-gen-kuberay/v1.0/res-gen-kuberay.yaml
+#- ../res-templates/res-gen-naas/v1.0/res-gen-naas.yaml
+- ../res-templates/res-gen-notebook/v1.0/res-gen-notebook.yaml
+#- ../res-templates/res-gen-vcluster-dep/v1.0/res-gen-vcluster-dep.yaml
+#- ../res-templates/res-gen-vcluster-imp/v1.0/res-gen-vcluster-imp.yaml
+- ../res-templates/res-gen-vcluster/v1.0/res-gen-vcluster.yaml
+- ../res-templates/res-gke-cluster/v1.0/res-gke-cluster.yaml
+- ../res-templates/res-gke-feast-gcp/v1.0/res-gke-feast-gcp.yaml
+- ../res-templates/res-gke-import/v1.0/res-gke-import.yaml
+- ../res-templates/res-gke-infra-gcp/v1.0/res-gke-infra-gcp.yaml
+- ../res-templates/res-gke-kubeflow-gcp/v1.0/res-gke-kubeflow-gcp.yaml
+- ../res-templates/res-gke-mlflow-gcp/v1.0/res-gke-mlflow-gcp.yaml
+- ../res-templates/res-kata-qemu/v1.0/res-kata-qemu.yaml
+- ../res-templates/res-kf-namespace-collaborators/v1.0/res-kf-namespace-collaborators.yaml
+- ../res-templates/res-kf-resource-quota/v1.0/res-kf-resource-quota.yaml
+- ../res-templates/res-kubeflow19-core/v1.0/res-kubeflow19-core.yaml
+- ../res-templates/res-kubeflow19-feast/v1.0/res-kubeflow19-feast.yaml
+- ../res-templates/res-kubeflow19-mlflow/v1.0/res-kubeflow19-mlflow.yaml
+- ../res-templates/res-nutanixvm-infra/v1.0/res-nutanixvm-infra.yaml
+- ../res-templates/res-nutanixvm-infra-delete/v1.0/res-nutanixvm-infra-delete.yaml
+- ../res-templates/res-opa-gatekeeper/v1.0/res-opa-gatekeeper.yaml
+#- ../res-templates/res-upstream-infra-p72/v1.0/res-upstream-infra-p72.yaml
+- ../res-templates/res-upstream-infra/v1.0/res-upstream-infra.yaml
+#- ../res-templates/res-vspherevm-infra-p72/v1.0/res-vspherevm-infra-p72.yaml
+- ../res-templates/res-vspherevm-infra/v1.0/res-vspherevm-infra.yaml
+- ../res-templates/res-gen-vcluster/v1.2/res-gen-vcluster.yaml
+#- ../res-templates/res-gen-vcluster-dep/v1.2/res-gen-vcluster-dep.yaml
+
+templates:
+- ../env-templates/system-eks/v1.0/system-eks.yaml
+- ../env-templates/system-gcp-kubeflow/v1.0/system-gcp-kubeflow.yaml
+- ../env-templates/system-gke/v1.0/system-gke.yaml
+- ../env-templates/system-inference-vllm/v1.0/system-inference-vllm.yaml
+- ../env-templates/system-jupyternotebook-anyk8s/v1.0/system-jupyternotebook-anyk8s.yaml
+- ../env-templates/system-kubeflow-profile/v1.0/system-kubeflow-profile.yaml
+- ../env-templates/system-kuberay-anyk8s/v1.0/system-kuberay-anyk8s.yaml
+- ../env-templates/system-kuberay-vcluster/v1.0/system-kuberay-vcluster.yaml
+- ../env-templates/system-mks-kubeflow/v1.0/system-mks-kubeflow.yaml
+- ../env-templates/system-mks/v2.0/system-mks.yaml
+#- ../env-templates/system-naas/v1.0/system-naas.yaml
+- ../env-templates/system-nutanix-mks/v1.0/system-nutanix-mks.yaml
+#- ../env-templates/system-vcluster-anyk8s-paas/v1.0/system-vcluster-anyk8s-paas.yaml
+- ../env-templates/system-vcluster-anyk8s/v1.0/system-vcluster-anyk8s.yaml
+#- ../env-templates/system-vsphere-mks-p72/v1.0/system-vsphere-mks-p72.yaml
+- ../env-templates/system-vsphere-mks/v1.0/system-vsphere-mks.yaml
+#- ../env-templates/system-vcluster-anyk8s-paas/v1.2/system-vcluster-anyk8s-paas.yaml
+- ../env-templates/system-vcluster-anyk8s/v1.2/system-vcluster-anyk8s.yaml
+
+workflow-handlers:
+- ../workflow-handlers/system-jira-approval-v1.yaml
+- ../workflow-handlers/system-servicenow-approval-v1.yaml
+compute-profiles:
+
+service-profiles:

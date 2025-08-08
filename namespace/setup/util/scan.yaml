@@ -1,0 +1,6 @@
+# List of folders to scan
+- ../../repository
+- ../../context
+- ../../res-templates
+- ../../env-templates
+- ../../workflow-handlers
