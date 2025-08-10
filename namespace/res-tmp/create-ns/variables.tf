@@ -4,8 +4,7 @@ variable "namespace_name" {
   default     = "demo-namespace"
 }
 
-variable "kubeconfig_path" {
-  description = "Path to your kubeconfig file"
+variable "kubeconfig_content" {
+  description = "Full kubeconfig file content"
   type        = string
-  default     = "~/.kube/config"
 }
