@@ -1,2 +1,2 @@
 cluster_name="test-cluster"
-rafay_config_file="/Users/narayana/Downloads/rnr.json"
+rctl_config_path="/Users/narayana/Downloads/rnr.json"
