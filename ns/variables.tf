@@ -16,5 +16,5 @@ variable "host_cluster_name" {
 variable "status" {
    description = "Allow user to control the nginx deployment"
    type = string
-   default = no
+   default = "no"
 }
