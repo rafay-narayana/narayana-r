@@ -7,5 +7,5 @@ variable "namespace_name" {
 variable "kubeconfig_path" {
   description = "Path to the kubeconfig file"
   type        = string
-  default     = "./kubeconfig" # temp file we create in pipeline
+  default     = "/tmp/kubeconfig" # temp file we create in pipeline
 }
