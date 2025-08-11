@@ -4,7 +4,7 @@ variable "namespace_name" {
   default     = "demo-namespace"
 }
 
-variable "cluster_name" {
+variable "host_cluster_name" {
   description = "The name of the cluster"
   type        = string
   validation {

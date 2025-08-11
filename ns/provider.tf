@@ -22,3 +22,7 @@ terraform {
 provider "rafay" {
   provider_config_file = "/Users/narayana/Downloads/rnr.json"
 }
+
+provider "kubernetes" {
+  config_path = local_file.kubeconfig.filename
+}
