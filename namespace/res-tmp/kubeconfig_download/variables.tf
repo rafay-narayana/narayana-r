@@ -1,7 +1,7 @@
-variable "rafay_config_file" {
-  description = "rafay provider config file for authentication"
+variable "rctl_config_path" {
+  description = "The path to the Rafay CLI config file"
   type        = string
-  default     = "/Users/config.json"
+  default     = "opt/rafay"
 }
 
 variable "cluster_name" {
