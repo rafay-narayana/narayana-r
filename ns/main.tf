@@ -26,3 +26,56 @@ resource "kubernetes_namespace" "ns" {
   }
 }
 
+resource "kubernetes_deployment" "nginx" {
+ count = var.status == "yes" ? 1 : 0
+ depends_on = [null_resource.host_kubeconfig_ready, kubernetes_namespace.ns]
+ metadata {
+  name   = "nginx-deployment"
+  namespace = var.namespace_name
+  labels = {
+   app = "nginx"
+  }
+ }
+ spec {
+  replicas = 1
+  selector {
+   match_labels = {
+    app = "nginx"
+   }
+  }
+  template {
+   metadata {
+    labels = {
+     app = "nginx"
+    }
+   }
+   spec {
+    container {
+     name = "nginx"
+     image = "nginx:latest"
+     port {
+      container_port = 80
+     }
+    }
+   }
+  }
+ }
+}
+resource "kubernetes_service" "nginx" {
+ count = var.nginxstatus == "yes" ? 1 : 0
+ depends_on = [kubernetes_deployment.nginx]
+ metadata {
+  name   = "nginx-service"
+  namespace = var.namespace_name
+ }
+ spec {
+  selector = {
+   app = "nginx"
+  }
+  port {
+   port    = 80
+   target_port = 80
+  }
+  type = "ClusterIP"
+ }
+}

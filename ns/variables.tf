@@ -12,3 +12,9 @@ variable "host_cluster_name" {
     error_message = "The cluster name must not be empty."
   }
 }
+
+variable "status" {
+   description = "Allow user to control the nginx deployment"
+   type = string
+   default = no
+}
