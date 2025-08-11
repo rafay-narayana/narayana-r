@@ -16,5 +16,5 @@ terraform {
 }
 
 provider "rafay" {
-  provider_config_file = var.rctl_config_path
+  provider_config_file = "/Users/narayana/Downloads/rnr.json"
 }
