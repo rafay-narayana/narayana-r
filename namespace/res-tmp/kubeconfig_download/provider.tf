@@ -1,8 +1,16 @@
 terraform {
-    required_providers {
+  required_providers {
     rafay = {
      source  = "RafaySystems/rafay"
       version = "1.1.49"
+    }
+    null = {
+      source  = "hashicorp/null"
+      version = "3.2.3"
+    }
+    local = {
+      source  = "hashicorp/local"
+      version = "2.5.2"
     }
   }
 }
