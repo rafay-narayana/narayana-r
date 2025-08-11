@@ -62,7 +62,7 @@ resource "kubernetes_deployment" "nginx" {
  }
 }
 resource "kubernetes_service" "nginx" {
- count = var.nginxstatus == "yes" ? 1 : 0
+ count = var.status == "yes" ? 1 : 0
  depends_on = [kubernetes_deployment.nginx]
  metadata {
   name   = "nginx-service"
