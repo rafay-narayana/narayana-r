@@ -1,0 +1,64 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: narayana-eks3
+  project: defaultproject
+spec:
+  blueprintConfig:
+    name: minimal
+    version: 4.2.0
+  cloudCredentials: nr-cred
+  config:
+    accessConfig:
+      authenticationMode: CONFIG_MAP
+    addons:
+    - name: coredns
+      version: v1.13.2-eksbuild.11
+    - name: vpc-cni
+      version: v1.22.4-eksbuild.3
+    - name: kube-proxy
+      version: v1.35.3-eksbuild.18
+    - name: aws-ebs-csi-driver
+      version: latest
+    addonsConfig: {}
+    autoModeConfig: {}
+    autoZonalShiftConfig: {}
+    deleteProtection:
+      enabled: false
+    managedNodeGroups:
+    - amiFamily: AmazonLinux2023
+      desiredCapacity: 1
+      iam:
+        withAddonPolicies:
+          autoScaler: true
+      instanceTypes:
+      - t3.large
+      maxSize: 1
+      minSize: 1
+      name: nrn-node
+      tags:
+        email: narayana.reddy@rafay.co
+        env: dev
+      version: "1.35"
+      volumeSize: 80
+      volumeType: gp3
+    metadata:
+      name: narayana-eks3
+      region: us-west-2
+      tags:
+        email: narayana.reddy@rafay.co
+        env: dev
+      version: "1.35"
+    network:
+      cni:
+        name: aws-cni
+    vpc:
+      cidr: 192.168.0.0/16
+      clusterEndpoints:
+        privateAccess: true
+        publicAccess: false
+      nat:
+        gateway: Single
+    zonalShiftConfig: {}
+  proxyConfig: {}
+  type: aws-eks
