@@ -48,6 +48,7 @@ spec:
       tags:
         email: narayana.reddy@rafay.co
         env: dev
+        test: test1
       version: "1.35"
     network:
       cni:
