@@ -9,7 +9,7 @@ spec:
   config:
     autoApproveNodes: true
     installerTtl: 365
-    kubernetesVersion: v1.34.7
+    kubernetesVersion: v1.35.4
     network:
       cni:
         name: Cilium
@@ -17,6 +17,13 @@ spec:
       podSubnet: 10.244.0.0/16
       serviceSubnet: 10.96.0.0/12
     nodes:
+    - arch: amd64
+      hostname: narayana-instance-t1
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.1.66
+      roles:
+      - Worker
+      - ControlPlane
     - arch: amd64
       hostname: narayana-instance-t2
       operatingSystem: Ubuntu24.04
@@ -29,13 +36,6 @@ spec:
       privateIP: 10.0.1.4
       roles:
       - Worker
-    - arch: amd64
-      hostname: narayana-instance-t1
-      operatingSystem: Ubuntu24.04
-      privateIP: 10.0.1.66
-      roles:
-      - Worker
-      - ControlPlane
     platformVersion: v1.3.2
   proxy: {}
   type: mks
