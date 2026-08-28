@@ -1,6 +1,8 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
+  labels:
+    key1: keyvalue
   name: narayana-mks-ha
   project: defaultproject
 spec:
@@ -17,6 +19,34 @@ spec:
         version: 1.20.1
       podSubnet: 10.244.0.0/16
       serviceSubnet: 10.96.0.0/12
+    nodes:
+    - arch: amd64
+      hostname: narayana-instance-m11
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.1.140
+      roles:
+      - Worker
+      - ControlPlane
+    - arch: amd64
+      hostname: narayana-instance-m13
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.1.195
+      roles:
+      - Worker
+      - ControlPlane
+    - arch: amd64
+      hostname: narayana-instance-m12
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.1.202
+      roles:
+      - ControlPlane
+      - Worker
+    - arch: amd64
+      hostname: narayana-instance-m14
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.1.225
+      roles:
+      - Worker
     platformVersion: v1.3.2
   proxy: {}
   type: mks
