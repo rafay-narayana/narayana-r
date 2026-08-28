@@ -18,13 +18,6 @@ spec:
       serviceSubnet: 10.96.0.0/12
     nodes:
     - arch: amd64
-      hostname: narayana-instance-t1
-      operatingSystem: Ubuntu24.04
-      privateIP: 10.0.1.66
-      roles:
-      - Worker
-      - ControlPlane
-    - arch: amd64
       hostname: narayana-instance-t2
       operatingSystem: Ubuntu24.04
       privateIP: 10.0.1.209
@@ -36,9 +29,13 @@ spec:
       privateIP: 10.0.1.4
       roles:
       - Worker
-      taints:
-      - effect: NoSchedule
-        key: node.cilium.io/agent-not-ready
+    - arch: amd64
+      hostname: narayana-instance-t1
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.1.66
+      roles:
+      - Worker
+      - ControlPlane
     platformVersion: v1.3.2
   proxy: {}
   type: mks
