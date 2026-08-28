@@ -9,7 +9,7 @@ spec:
   config:
     autoApproveNodes: true
     installerTtl: 365
-    kubernetesVersion: v1.33.11
+    kubernetesVersion: v1.34.7
     network:
       cni:
         name: Cilium
@@ -30,6 +30,15 @@ spec:
       privateIP: 10.0.1.209
       roles:
       - Worker
+    - arch: amd64
+      hostname: narayana-instance-t3
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.1.4
+      roles:
+      - Worker
+      taints:
+      - effect: NoSchedule
+        key: node.cilium.io/agent-not-ready
     platformVersion: v1.3.2
   proxy: {}
   type: mks
