@@ -30,12 +30,6 @@ spec:
       privateIP: 10.0.1.209
       roles:
       - Worker
-    - arch: amd64
-      hostname: narayana-instance-t3
-      operatingSystem: Ubuntu24.04
-      privateIP: 10.0.1.4
-      roles:
-      - Worker
     platformVersion: v1.3.2
   proxy: {}
   type: mks
