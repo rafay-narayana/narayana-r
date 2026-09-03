@@ -19,13 +19,6 @@ spec:
       serviceSubnet: 10.96.0.0/12
     nodes:
     - arch: amd64
-      hostname: narayana-instance-m1
-      operatingSystem: Ubuntu22.04
-      privateIP: 10.0.1.232
-      roles:
-      - Worker
-      - ControlPlane
-    - arch: amd64
       hostname: narayana-instance-w1
       operatingSystem: Ubuntu22.04
       privateIP: 10.0.1.66
@@ -35,6 +28,13 @@ spec:
       hostname: narayana-instance-m2
       operatingSystem: Ubuntu22.04
       privateIP: 10.0.1.39
+      roles:
+      - Worker
+      - ControlPlane
+    - arch: amd64
+      hostname: narayana-instance-m1
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.1.232
       roles:
       - Worker
       - ControlPlane
