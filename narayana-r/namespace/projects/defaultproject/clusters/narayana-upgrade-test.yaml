@@ -30,6 +30,12 @@ spec:
       roles:
       - Worker
       - ControlPlane
+    - arch: amd64
+      hostname: narayana-instance-t3
+      operatingSystem: Ubuntu22.04
+      privateIP: 10.0.1.9
+      roles:
+      - Worker
     platformVersion: v1.3.2
   proxy: {}
   type: mks
