@@ -9,7 +9,7 @@ spec:
   config:
     autoApproveNodes: true
     installerTtl: 365
-    kubernetesVersion: v1.33.11
+    kubernetesVersion: v1.34.7
     network:
       cni:
         name: Cilium
