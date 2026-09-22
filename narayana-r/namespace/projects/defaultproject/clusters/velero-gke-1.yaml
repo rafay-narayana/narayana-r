@@ -1,0 +1,48 @@
+apiVersion: infra.k8smgmt.io/v3
+kind: Cluster
+metadata:
+  name: velero-gke-1
+  project: defaultproject
+spec:
+  blueprint:
+    name: default
+    version: latest
+  cloudCredentials: anjali-gcp
+  config:
+    controlPlaneVersion: "1.35"
+    features:
+      enableComputeEnginePersistentDiskCSIDriver: true
+    gcpProject: dev-382813
+    location:
+      config:
+        zone: us-central1-a
+      type: zonal
+    network:
+      access:
+        config: null
+        type: public
+      dataPlaneV2: ADVANCED_DATAPATH
+      enableVPCNativetraffic: true
+      maxPodsPerNode: 110
+      name: default
+      podSecondaryRangeName: velero-anjali-pods
+      serviceSecondaryRangeName: velero-anjali-services
+      subnetName: default
+    nodePools:
+    - machineConfig:
+        bootDiskSize: 100
+        bootDiskType: pd-standard
+        imageType: COS_CONTAINERD
+        machineType: e2-standard-4
+      management:
+        autoUpgrade: true
+      name: default-nodepool
+      nodeVersion: "1.35"
+      size: 2
+      upgradeSettings:
+        config:
+          maxSurge: 1
+        strategy: SURGE
+    releaseChannel:
+      channel: REGULAR
+  type: gke
