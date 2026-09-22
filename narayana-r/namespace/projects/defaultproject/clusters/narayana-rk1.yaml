@@ -5,8 +5,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: minimal
-    version: 4.3.1
+    name: test-ns
+    version: v1.0
   cloudCredentials: kr
   config:
     accessConfig:
