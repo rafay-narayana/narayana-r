@@ -32,7 +32,7 @@ spec:
             loadBalancerSku: standard
             networkPlugin: kubenet
           powerState:
-            code: Running
+            code: Stopped
         sku:
           name: Base
           tier: Free
