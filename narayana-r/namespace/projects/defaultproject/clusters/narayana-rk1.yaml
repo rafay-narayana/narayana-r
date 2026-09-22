@@ -6,7 +6,7 @@ metadata:
 spec:
   blueprintConfig:
     name: minimal
-    version: Latest
+    version: 4.3.1
   cloudCredentials: kr
   config:
     accessConfig:
