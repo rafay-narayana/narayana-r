@@ -5,7 +5,8 @@ metadata:
   project: defaultproject
 spec:
   blueprintConfig:
-    name: minimal
+    name: test-ns
+    version: v1.0
   cloudCredentials: n-cred
   config:
     kind: aksClusterConfig
