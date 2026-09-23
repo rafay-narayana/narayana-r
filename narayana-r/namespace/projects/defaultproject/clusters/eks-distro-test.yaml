@@ -6,6 +6,7 @@ metadata:
 spec:
   blueprint:
     name: default-upstream
+    version: latest
   config:
     installerTtl: 365
     kubernetesVersion: v1.34.7
