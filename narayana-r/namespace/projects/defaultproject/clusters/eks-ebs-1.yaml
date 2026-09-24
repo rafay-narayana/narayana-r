@@ -5,7 +5,8 @@ metadata:
   project: defaultproject
 spec:
   blueprint:
-    name: default-upstream
+    name: ebs-test
+    version: v0
   config:
     autoApproveNodes: true
     installerTtl: 365
