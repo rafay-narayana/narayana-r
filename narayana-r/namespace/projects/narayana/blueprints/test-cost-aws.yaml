@@ -1,12 +1,15 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Blueprint
 metadata:
-  name: raytest
-  project: defaultproject
+  name: test-cost-aws
+  project: narayana
 spec:
   base:
     name: default
-    version: 5.0.0
+    version: 4.3.2
+  costProfile:
+    name: test-cost-aws
+    version: v1.0
   defaultAddons:
     enableIngress: true
     enableLocalStorage: true

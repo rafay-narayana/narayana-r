@@ -1,11 +1,12 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: test-nr
-  project: defaultproject
+  name: narayana-test-1
+  project: narayana
 spec:
   blueprint:
     name: default
+    version: latest
   config:
     autoApproveNodes: true
     installerTtl: 365
@@ -18,12 +19,12 @@ spec:
       serviceSubnet: 10.96.0.0/12
     nodes:
     - arch: amd64
-      hostname: narayana-testc1
+      hostname: narayana-test3
       operatingSystem: Ubuntu24.04
-      privateIP: 10.0.1.222
+      privateIP: 10.0.1.14
       roles:
       - Worker
       - ControlPlane
-    platformVersion: v1.6.0
+    platformVersion: v1.6.1
   proxy: {}
   type: mks
