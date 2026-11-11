@@ -1,7 +1,7 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Namespace
 metadata:
-  name: test-ns1
+  name: test-ns2
   project: narayana
 spec:
   limitRange:
