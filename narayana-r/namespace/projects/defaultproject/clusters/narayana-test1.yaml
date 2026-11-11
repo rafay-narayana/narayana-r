@@ -5,11 +5,12 @@ metadata:
   project: defaultproject
 spec:
   blueprint:
-    name: default-upstream
+    name: default
+    version: latest
   config:
     autoApproveNodes: true
     installerTtl: 365
-    kubernetesVersion: v1.35.4
+    kubernetesVersion: v1.36.4
     network:
       cni:
         name: Calico
@@ -18,19 +19,12 @@ spec:
       serviceSubnet: 10.96.0.0/12
     nodes:
     - arch: amd64
-      hostname: narayana-st
+      hostname: narayana-test2
       operatingSystem: Ubuntu24.04
-      privateIP: 10.0.1.223
-      roles:
-      - Storage
-      - Worker
-    - arch: amd64
-      hostname: narayana-ups
-      operatingSystem: Ubuntu24.04
-      privateIP: 10.0.1.220
+      privateIP: 10.0.1.41
       roles:
       - Worker
       - ControlPlane
-    platformVersion: v1.4.0
+    platformVersion: v1.6.0
   proxy: {}
   type: mks

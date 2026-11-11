@@ -1,16 +1,15 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: eks-ebs-1
+  name: test-nr
   project: defaultproject
 spec:
   blueprint:
-    name: ebs-test
-    version: v0
+    name: default
   config:
     autoApproveNodes: true
     installerTtl: 365
-    kubernetesVersion: v1.35.4
+    kubernetesVersion: v1.36.4
     network:
       cni:
         name: Calico
@@ -19,13 +18,12 @@ spec:
       serviceSubnet: 10.96.0.0/12
     nodes:
     - arch: amd64
-      hostname: ip-172-31-26-19
-      operatingSystem: Ubuntu22.04
-      privateIP: 172.31.26.19
+      hostname: narayana-testc1
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.1.222
       roles:
       - Worker
       - ControlPlane
-      - Storage
-    platformVersion: v1.4.0
+    platformVersion: v1.6.0
   proxy: {}
   type: mks
