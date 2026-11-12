@@ -5,7 +5,7 @@ metadata:
   project: narayana
 spec:
   blueprint:
-    name: minimal
+    name: default
     version: latest
   config:
     autoApproveNodes: true
