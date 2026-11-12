@@ -5,7 +5,8 @@ metadata:
   project: narayana
 spec:
   blueprint:
-    name: minimal
+    name: default-upstream
+    version: latest
   config:
     installerTtl: 365
     kubernetesVersion: v1.36.4
