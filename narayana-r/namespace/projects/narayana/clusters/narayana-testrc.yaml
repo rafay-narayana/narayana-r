@@ -18,18 +18,18 @@ spec:
       serviceSubnet: 10.96.0.0/12
     nodes:
     - arch: amd64
-      hostname: narayana-vm1
-      operatingSystem: Ubuntu24.04
-      privateIP: 10.0.1.17
-      roles:
-      - ControlPlane
-      - Worker
-    - arch: amd64
       hostname: narayana-vm2
       operatingSystem: Ubuntu24.04
       privateIP: 10.0.1.31
       roles:
       - Storage
+      - Worker
+    - arch: amd64
+      hostname: narayana-vm1
+      operatingSystem: Ubuntu24.04
+      privateIP: 10.0.1.17
+      roles:
+      - ControlPlane
       - Worker
     platformVersion: v1.6.1
   proxy: {}
