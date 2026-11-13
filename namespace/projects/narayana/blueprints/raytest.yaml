@@ -4,6 +4,17 @@ metadata:
   name: raytest
   project: narayana
 spec:
+  base:
+    name: default
+    version: 4.3.4
+  defaultAddons:
+    enableIngress: true
+    enableLocalStorage: true
+    enableMonitoring: true
+    monitoring:
+      gpuOperator: {}
   driftWebhook:
     enabled: true
   type: custom
+  version: v1.0
+  versionState: active
