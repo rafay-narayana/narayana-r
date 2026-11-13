@@ -3,4 +3,6 @@ kind: Namespace
 metadata:
   name: test-ns-n
   project: narayana
-spec: {}
+spec:
+  namespaceMeshPolicyParams: {}
+  resourceQuotas: {}
