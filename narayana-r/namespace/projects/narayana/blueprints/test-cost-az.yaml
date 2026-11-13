@@ -1,18 +1,22 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Blueprint
 metadata:
-  name: raytest3
+  name: test-cost-az
   project: narayana
 spec:
   base:
-    name: default
-    version: 5.0.0
+    name: default-aks
+    version: 4.3.2
+  costProfile:
+    name: test-ns-az
+    version: v1.0
   defaultAddons:
     enableIngress: true
-    enableLocalStorage: true
     enableMonitoring: true
     monitoring:
       gpuOperator: {}
+      metricsServer: {}
+      prometheusAdapter: {}
   driftWebhook:
     enabled: true
   type: custom

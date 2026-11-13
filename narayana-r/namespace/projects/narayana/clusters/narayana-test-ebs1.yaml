@@ -1,13 +1,13 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: narayana-testrc
+  name: narayana-test-ebs1
   project: narayana
 spec:
   blueprint:
     name: default-upstream
-    version: latest
   config:
+    autoApproveNodes: true
     installerTtl: 365
     kubernetesVersion: v1.36.4
     network:
@@ -18,19 +18,19 @@ spec:
       serviceSubnet: 10.96.0.0/12
     nodes:
     - arch: amd64
-      hostname: narayana-vm2
-      operatingSystem: Ubuntu24.04
-      privateIP: 10.0.1.31
+      hostname: ip-172-31-15-108
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.15.108
       roles:
-      - Storage
       - Worker
-    - arch: amd64
-      hostname: narayana-vm1
-      operatingSystem: Ubuntu24.04
-      privateIP: 10.0.1.17
-      roles:
       - ControlPlane
+    - arch: amd64
+      hostname: ip-172-31-2-45
+      operatingSystem: Ubuntu22.04
+      privateIP: 172.31.2.45
+      roles:
       - Worker
-    platformVersion: v1.6.1
+      - Storage
+    platformVersion: v1.6.0
   proxy: {}
   type: mks

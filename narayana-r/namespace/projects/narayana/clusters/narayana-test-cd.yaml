@@ -1,7 +1,7 @@
 apiVersion: infra.k8smgmt.io/v3
 kind: Cluster
 metadata:
-  name: narayana-cluster
+  name: narayana-test-cd
   project: narayana
 spec:
   blueprint:
@@ -18,12 +18,12 @@ spec:
       serviceSubnet: 10.96.0.0/12
     nodes:
     - arch: amd64
-      hostname: narayana-testc1
+      hostname: narayana-vm3
       operatingSystem: Ubuntu24.04
-      privateIP: 10.0.1.222
+      privateIP: 10.0.1.60
       roles:
       - Worker
       - ControlPlane
-    platformVersion: v1.6.0
+    platformVersion: v1.6.1
   proxy: {}
   type: mks
